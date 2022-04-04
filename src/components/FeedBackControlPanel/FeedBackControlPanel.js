@@ -7,14 +7,14 @@ const FeedbackControlPanel = ({ options, onLeaveFeedback }) => {
     <div className={s.container}>
       <ul className={s.list}>
         {items.map(item => {
-          const name = item[0].toUpperCase() + item.slice(1, item.length);
+          const buttName = item[0].toUpperCase() + item.slice(1, item.length);
           return (
             <li className={s.item} key={item}>
               <button
                 className={s.button}
                 onClick={() => onLeaveFeedback(item)}
               >
-                {name}
+                {buttName}
               </button>
             </li>
           );

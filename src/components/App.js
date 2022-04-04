@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import FeedbackControlPanel from './FeedBackControlPanel/FeedBackControlPanel';
-import Statictics from './FeedbackStatisticsPanel/FeedbackStatisticsPanel';
+import Statistics from './FeedbackStatisticsPanel/FeedbackStatisticsPanel';
 import Section from './Section/Section';
 import Notification from './Notification/Notification';
 
@@ -12,9 +12,7 @@ class App extends Component {
   };
 
   countTotalFeedback = () => {
-    return Object.values(this.state).reduce((acc, item) => {
-      return (acc += item);
-    }, 0);
+    return Object.values(this.state).reduce((acc, item) => (acc += item), 0);
   };
 
   countPositiveFeedbackPercentage = () => {
@@ -46,7 +44,7 @@ class App extends Component {
 
         {this.countTotalFeedback() > 0 ? (
           <Section title="Statistics">
-            <Statictics
+            <Statistics
               good={good}
               neutral={neutral}
               bad={bad}
