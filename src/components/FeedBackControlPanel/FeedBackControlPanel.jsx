@@ -27,10 +27,10 @@ const FeedbackControlPanel = ({ options, onLeaveFeedback }) => {
 
 FeedbackControlPanel.propTypes = {
   options: PropTypes.shape({
-    good: PropTypes.number,
-    neutral: PropTypes.number,
-    bad: PropTypes.number,
-  }).isRequired,
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+  }),
   onLeaveFeedback: PropTypes.func.isRequired,
 };
 
