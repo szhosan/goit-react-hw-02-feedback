@@ -23,10 +23,8 @@ class App extends Component {
   };
 
   countFeedBack = item => {
-    let feedbackObj = {};
     this.setState(prevState => {
-      feedbackObj[item] = prevState[item] + 1;
-      return feedbackObj;
+      return { [item]: prevState[item] + 1 };
     });
   };
 
@@ -48,8 +46,8 @@ class App extends Component {
               good={good}
               neutral={neutral}
               bad={bad}
-              total={this.countTotalFeedback}
-              positivePercentage={this.countPositiveFeedbackPercentage}
+              total={this.countTotalFeedback()}
+              positivePercentage={this.countPositiveFeedbackPercentage()}
             />
           </Section>
         ) : (
